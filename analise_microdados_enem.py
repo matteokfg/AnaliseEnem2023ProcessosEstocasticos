@@ -2,6 +2,8 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+import zipfile
+import os
 
 # -----------------------------------------------
 # Configuração inicial
@@ -14,6 +16,9 @@ Bem-vindo(a) à análise dos dados do ENEM 2023!
 Aqui você poderá explorar o perfil dos candidatos, suas condições socioeconômicas e o desempenho geral.
 Também apresentamos uma análise estatística inicial para melhor compreensão dos dados.
 """)
+
+with zipfile.ZipFile('microdados_limpos_enem_2023.zip', 'r') as zip_ref:
+    zip_ref.extractall(os.getcwd())
 
 # -----------------------------------------------
 # Carregar Dados
